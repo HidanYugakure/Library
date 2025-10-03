@@ -9,7 +9,6 @@ public class BookRepository : IBookRepository
 {
     private readonly AppDbContext _ctx;
     public BookRepository(AppDbContext ctx) => _ctx = ctx;
-
     public Book Add(Book book)
     {
         // author yoxla
@@ -30,7 +29,6 @@ public class BookRepository : IBookRepository
     {
         var b = _ctx.Books.FirstOrDefault(x => x.Id == id);
         if (b is null) return false;
-
         // optional: aktiv rezerv varsa silmə
         var inUse = _ctx.ReservedItems.Any(r => r.BookId == id &&
             (r.Status == Library.Domain.Enums.Status.Confirmed ||

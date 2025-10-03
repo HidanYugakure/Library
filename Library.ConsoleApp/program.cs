@@ -8,8 +8,7 @@ namespace Library.ConsoleApp
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Online Library Application başladı!");
-            MenuRouter.MainMenu();
+            
         }
     }
 }

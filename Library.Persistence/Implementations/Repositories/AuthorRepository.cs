@@ -16,7 +16,6 @@ public class AuthorRepository : IAuthorRepository
         _ctx.SaveChanges();
         return author;
     }
-
     public List<Author> GetAll() =>
         _ctx.Authors.Include(a => a.Books).ToList();
 
